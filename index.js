@@ -193,19 +193,16 @@ Use the getAverageWordLength function below to do the following:
 */
 
 function getAverageWordLength(array){
-  let letterCount = 0;
   let wordCount = 1;
   let newArraySpace = array.join(' ');
   let newStringSpace = newArraySpace.split(',')
   let newArray = newStringSpace.join('');
-  console.log(newArray)
-  for(i=0; i < newArray.length; i++) {
+  for(let i=0; i < newArray.length; i++) {
     if(newArray[i] === " ") {
     wordCount++;
     } 
   } 
-  letterCount = newArray.length - wordCount;
-  averageWords = wordCount / array.length;
+  const averageWords = wordCount / array.length;
   return averageWords;
 }
 console.log(getAverageWordLength(originalFlavors));
@@ -307,7 +304,7 @@ const regionalFlavors = [
 function getRandomFlavors(array1, array2, array3, array4){
   const arrayFinal = array1.concat(array2, array3, array4);
   const finalArray = []
-  for(i=0; i < 31; i++) {
+  for(let i=0; i < 31; i++) {
   let flavor = arrayFinal[Math.floor(Math.random() * arrayFinal.length)];
   finalArray.unshift(flavor);
   arrayFinal.splice(arrayFinal.indexOf(finalArray[0]), 1);
